@@ -18,7 +18,7 @@ export class _Blank extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return { headerLeft: <SlideMenuIcon navigationProps={navigation} /> }
   }
-  state = {}
+  state = { CheckBox_5: true }
   render = () => (
     <View style={styles.View_1}>
       <Button
@@ -26,6 +26,15 @@ export class _Blank extends React.Component {
         color="#3366FF"
         style={styles.Button_3}
         onPress={() => alert("Pressed!")}
+      />
+      <CheckBox
+        title="Radio button"
+        disabled={false}
+        checkedIcon="dot-circle-o"
+        uncheckedIcon="circle-o"
+        containerStyle={styles.CheckBox_5}
+        checked={this.state.CheckBox_5}
+        onPress={nextChecked => this.setState({ CheckBox_5: nextChecked })}
       />
     </View>
   )
